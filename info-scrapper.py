@@ -27,8 +27,9 @@ print (sys)
 print (proc)
 print (date)
 
-text_file = open("Output"+hostn+date+".txt", "w",)
-text_file.write("info: \n"+machine+ver+plat+sys+proc+date+"\n"+IP)
+text_file = open(hostn+date+".txt", "w",)
+local_path = hostn+date+'.txt'
+text_file.write("info: \n"+machine+"\n"+ver+"\n"+plat+"\n"+sys+"\n"+proc+"\n"+date+"\n"+IP)
 
 text_file.close()
 
@@ -36,10 +37,7 @@ def push_file_to_server():
     cnopts = sftp.CnOpts()
     cnopts.hostkeys = None
     s = sftp.Connection(host='54.201.26.36', username='sftpuser', password='Z&@9u$^NhTX%CCdtbDM7zXyBKRn=^z9dVy=*sqZ&k?dZ5cL%JkLMC#q6vFYTL&UE+*b^&Pn5DYj#ZKfjG5sA!xcMrPu5+jq$wX&pJ*m^28fY-5Fb4a2AhcEx9JtRVJVc', cnopts=cnopts)
-    localpath1 = "C:\temp\" + Output+hostn+date+.txt
-    local_path = localpath1+"Output"+hostn+date+".txt"
-    remote_path = "/home/Output"+hostn+date+".txt"
-
+    remote_path = '/sftpuser/'+local_path
     s.put(local_path, remote_path)
     s.close()
 
