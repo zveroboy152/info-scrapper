@@ -17,8 +17,8 @@ proc = platform.processor()
 hostn = socket.gethostname()
 IP = socket.gethostbyname(hostn)
 date = datetime.datetime.today().strftime('%Y-%m-%d')
-remotePath = "sftp://54.201.26.36/sftpuser"
-password = "Z&@9u$^NhTX%CCdtbDM7zXyBKRn=^z9dVy=*sqZ&k?dZ5cL%JkLMC#q6vFYTL&UE+*b^&Pn5DYj#ZKfjG5sA!xcMrPu5+jq$wX&pJ*m^28fY-5Fb4a2AhcEx9JtRVJVc"
+remotePath = ""
+password = ""
 print (machine)
 print (ver)
 print (plat)
